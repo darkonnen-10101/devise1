@@ -1,0 +1,11 @@
+<% if logged? %>
+  <%= current_user.name %>
+  registrado
+<% end %>
+
+    <% if logged? %>
+      <%= link_to "Salir", session_path(current_user), method: :delete, class: 'btn btn-danger' %>
+    <% else %>
+        <%= link_to "Registrarse", users_sign_up_path, class: 'btn btn-primary' %>
+        <%= link_to "Iniciar sesión", users_sign_in_path, class: 'btn btn-success' %>
+    <% end %>
